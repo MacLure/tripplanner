@@ -17,8 +17,15 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import home_view
+from pages.views import trips_view
+from trips.views import trip_detail_view
+from trips.views import trip_create_view
 
 urlpatterns = [
     path('', home_view, name='home'),
+    path('trips', trips_view, name='trips'),
+    path('trip/', trip_detail_view),
+    path('create/', trip_create_view),
+
     path('admin/', admin.site.urls),
 ]
